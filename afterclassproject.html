@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript HW 2</title>
+</head>
+<body>
+    <h1>Carol's JavaScript Project</h1>
+    <h3>This project is about making a simple multiplication function that works even 
+        if given one number it will give the choice of adding another number but if 
+        the reply is no or such word like it will multiply with its self. 
+        This code is conducted of alerts and nothing will be displayed in the console.
+        Please refresh the page to try the program again.
+        Thanks for visiting!
+    </h3>
+    <script>
+        const userInput = prompt("Hello! What is your name?");
+        alert("Welcome " + userInput + " to Carol's JavaScript Project!");
+
+        let userNum1 = prompt("Enter a number:");
+        userNum1 = parseFloat(userNum1);
+        if (isNaN(userNum1)) {
+            alert('That is not a valid number. Reload the page to try again.');
+        } else {
+
+            const wantSecond = prompt("Do you want to enter another number to multiply with this one? (yes/no)").trim().toLowerCase();
+            if (wantSecond === 'yes' || wantSecond === 'y') {
+                let userNum2 = prompt("Enter another number to multiply with " + userNum1 + ":");
+                userNum2 = parseFloat(userNum2);
+                if (isNaN(userNum2)) {
+                    alert('Second value was not a number — using the first number instead.');
+                    userNum2 = userNum1;
+                }
+                alert('Result: ' + (userNum1 * userNum2));
+            } else {
+
+                alert('Result: ' + (userNum1 * userNum1));
+            }
+        }
+    </script>
+</body>
+</html>
